@@ -4,8 +4,9 @@ A little module for creating text boxes in Pygame and Python 2.7
 # Documentation
 
 ####Import the module
+```python
 Import TextBox 
-
+```
 ####Create a textbox object
 ```python
 textbox1 = TextBox.TextBox(rect, text, bgcolour, text_colour, font)
