@@ -21,12 +21,12 @@ Note: x and y are the top left corner of the textbox. Set to (0, 0, 400, 25) as 
 ####This bit of code handles keyboard input
 ```python  
   if event.type == pygame.KEYDOWN:
-    if text.active == True:
+    if textbox1.active == True:
        textbox1.text_input(event)
 ```
 ####This tests if the textbox has been clicked
 ```python
-  text.test_collide(event)
+  textbox1.test_collide(event)
 ```
 ##In the Pygame main loop:
 
