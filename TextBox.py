@@ -4,7 +4,7 @@ pygame.font.init()
 
 
 class TextBox(object):
-    def __init__(self, rect=None, text=[], bgcolour=(222,222,222), text_colour=(0,0,0), font="Arial"):
+    def __init__(self, rect=None, text="", background_colour=(222,222,222), text_colour=(0,0,0), font="Arial"):
         # If no rectangle is specified, then a default one is chosen
         if rect is None:
             self.rect = pygame.Rect(0,0,400,25)
@@ -13,7 +13,7 @@ class TextBox(object):
 
         # Set the options (defaults if not specified by user)
         self.text = text
-        self.bgcolour = bgcolour
+        self.background_colour = background_colour
         self.text_colour = text_colour
         self.font = pygame.font.SysFont(font, 14)
         # Set the default state to False
@@ -21,7 +21,7 @@ class TextBox(object):
 
     def draw(self, message, screen):
         # Draw the box
-        pygame.draw.rect(screen,self.bgcolour,self.rect, 0)
+        pygame.draw.rect(screen, self.background_colour, self.rect, 0)
         # If there is a message, render it and draw it over the box. Update the display.
         if len(message) > 0:
             screen.blit(self.font.render(("".join(message)), True, self.text_colour), (self.rect.left+10, self.rect.top))
@@ -44,4 +44,4 @@ class TextBox(object):
         if event.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(event.pos):
             print "click!"
             self.active = True
-            self.bgcolour = (128,128,128)
+            self.background_colour = (128,128,128)
