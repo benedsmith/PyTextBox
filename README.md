@@ -13,7 +13,7 @@ Import TextBox
 ```
 ####Create a textbox object
 ```python
-textbox1 = TextBox.TextBox(rect, text, bgcolour, text_colour, font)
+textbox1 = TextBox.TextBox(rect, text, background_colour, text_colour, font, font_size)
 ```
 The rect - (x, y, width, height) 
 Note: x and y are the top left corner of the textbox. Set to (0, 0, 400, 25) as default.
