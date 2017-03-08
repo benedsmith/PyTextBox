@@ -32,12 +32,12 @@ class TextBox(object):
         key_input = event.key
         if key_input == pygame.K_BACKSPACE:
             if len(self.text) > 0:
-                self.text.pop()
+                self.text[:-1]
         elif key_input == pygame.K_RETURN:
             self.active = False
             self.background_colour = (222, 222, 222)
         elif key_input <= 127:
-            self.text.append(chr(key_input))
+            self.text += chr(key_input)
 
     def test_collide(self,event):
         # Check to see if the box gets clicked, set true and  change colour
