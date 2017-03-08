@@ -4,10 +4,10 @@ pygame.font.init()
 
 
 class TextBox(object):
-    def __init__(self, rect=None, text="", background_colour=(222,222,222), text_colour=(0,0,0), font="Arial"):
+    def __init__(self, rect=None, text="", background_colour=(222, 222, 222), text_colour=(0, 0, 0), font="Arial"):
         # If no rectangle is specified, then a default one is chosen
         if rect is None:
-            self.rect = pygame.Rect(0,0,400,25)
+            self.rect = pygame.Rect(0, 0, 400, 25)
         else:
             self.rect = pygame.Rect(rect)
 
@@ -35,7 +35,7 @@ class TextBox(object):
                 self.text.pop()
         elif key_input == pygame.K_RETURN:
             self.active = False
-            self.bgcolour = (222,222,222)
+            self.background_colour = (222, 222, 222)
         elif key_input <= 127:
             self.text.append(chr(key_input))
 
@@ -44,4 +44,4 @@ class TextBox(object):
         if event.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(event.pos):
             print "click!"
             self.active = True
-            self.background_colour = (128,128,128)
+            self.background_colour = (128, 128, 128)
