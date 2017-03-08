@@ -25,7 +25,6 @@ class TextBox(object):
         # If there is a message, render it and draw it over the box. Update the display.
         if len(message) > 0:
             screen.blit(self.font.render(("".join(message)), True, self.text_colour), (self.rect.left+10, self.rect.top))
-        pygame.display.flip()
 
     def text_input(self, event):
         # Grab the pressed key, do the relevant process with it
